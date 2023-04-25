@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 18px;
+        }
+        /*#customers tr:nth-child(even){background-color: #f2f2f2;}*/
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 15px;
+          padding-bottom: 15px;
+          text-align: left;
+          background-color: black;
+          color: white;
+        }
+        </style>
+</head>
+<body>
+    <div class="org">
+        <div class="title1" ><b>Project Vaidya</b></div>
+        <div class="logo">
+           <img src="static/logo.png" alt=""> 
+        </div>
+        <div text-align ="center";>
+        <ul >
+            <li><a href="/">Home</a></li>
+            <li><a href="/pt">Patient</a></li>
+            <li><a href="/d_r">Doctor</a></li>
+            <li><a href="/diag">Diagnosis</a></li>
+            <li class="active"><a href="/cont">Contact</a></li>
+        </ul>
+    </div>
+    </div>
+<div>{{msg}}</div>
+    <div>
+        <h1>Contributors</h1>
+<table id="customers" border=4>
+  <tr>
+    <th>Name</th>
+    <th>SRN</th>
+    <th>Email ID</th>
+  </tr>
+  <tr>
+    <td>Karthikeya R Jenni</td>
+    <td>PES1UG20CS200</td>
+    <td>karthikeyajenni@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Krishna Vedantha</td>
+    <td>PES1UG20CS219</td>
+    <td>krishv2002@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Likith R R</td>
+    <td>PES1UG20CS233</td>
+    <td>likithrrr@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Sohan M H</td>
+    <td>PES1UG20CS235</td>
+    <td>sohan.mh12@gmail.com</td>
+  </tr>
+  
+  
+</table>
+</div>
+
+</body>
+</html>

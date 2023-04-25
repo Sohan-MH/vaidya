@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/patient_reg_style.css">
+</head>
+<body>
+    <div class="org">
+        <div class="title1"><b>Project Vaidya</b></div>
+        <div class="logo">
+           <img src="/logo.png" alt="">
+        </div>
+        <ul>
+            <li ><a href="/">Home</a></li>
+            <li><a th:href="@{/registration}">Patient</a></li>
+            <li><a th:href="@{/doc_reg}">Doctor</a></li>
+            <li class="active"><a href="/registration">Diagnosis</a></li>
+            <li><a href="cont">Contact</a></li>
+        </ul>
+    </div>
+    
+<div class="form-style-5">
+  
+    <div class="outer">
+      <div class="Please">
+        <h1>Please select the symptoms you are facing:</h1>
+        </div>
+    <form th:action="@{/predict}" method="POST">
+    
+      
+      <table><tr><td><label class="container">Itching <input type="checkbox" name = "symptoms" value="Itching"><span class="checkmark"></span>
+      </label></td><td><label class="container">Skin Rash <input type="checkbox" name = "symptoms" value="Skin Rash"><span class="checkmark"></span>
+      </label></td><td><label class="container">Nodal Skin Eruptions <input type="checkbox" name = "symptoms" value="Nodal Skin Eruptions"><span class="checkmark"></span>
+      </label></td><td><label class="container">Continuous Sneezing <input type="checkbox" name = "symptoms" value="Continuous Sneezing"><span class="checkmark"></span>
+      </label></td><td><label class="container">Shivering <input type="checkbox" name = "symptoms" value="Shivering"><span class="checkmark"></span>
+      </label></td><td><label class="container">Chills <input type="checkbox" name = "symptoms" value="Chills"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Joint Pain <input type="checkbox" name = "symptoms" value="Joint Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Stomach Pain <input type="checkbox" name = "symptoms" value="Stomach Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Acidity <input type="checkbox" name = "symptoms" value="Acidity"><span class="checkmark"></span>
+      </label></td><td><label class="container">Ulcers On Tongue <input type="checkbox" name = "symptoms" value="Ulcers On Tongue"><span class="checkmark"></span>
+      </label></td><td><label class="container">Muscle Wasting <input type="checkbox" name = "symptoms" value="Muscle Wasting"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Vomiting <input type="checkbox" name = "symptoms" value="Vomiting"><span class="checkmark"></span>
+      </label></td><td><label class="container">Burning Micturition <input type="checkbox" name = "symptoms" value="Burning Micturition"><span class="checkmark"></span>
+      </label></td><td><label class="container">Spotting  urination <input type="checkbox" name = "symptoms" value="Spotting  urination"><span class="checkmark"></span>
+      </label></td><td><label class="container">Fatigue <input type="checkbox" name = "symptoms" value="Fatigue"><span class="checkmark"></span>
+      </label></td><td><label class="container">Weight Gain <input type="checkbox" name = "symptoms" value="Weight Gain"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Anxiety <input type="checkbox" name = "symptoms" value="Anxiety"><span class="checkmark"></span>
+      </label></td><td><label class="container">Cold Hands And Feets <input type="checkbox" name = "symptoms" value="Cold Hands And Feets"><span class="checkmark"></span>
+      </label></td><td><label class="container">Mood Swings <input type="checkbox" name = "symptoms" value="Mood Swings"><span class="checkmark"></span>
+      </label></td><td><label class="container">Weight Loss <input type="checkbox" name = "symptoms" value="Weight Loss"><span class="checkmark"></span>
+      </label></td><td><label class="container">Restlessness <input type="checkbox" name = "symptoms" value="Restlessness"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Lethargy <input type="checkbox" name = "symptoms" value="Lethargy"><span class="checkmark"></span>
+      </label></td><td><label class="container">Patches In Throat <input type="checkbox" name = "symptoms" value="Patches In Throat"><span class="checkmark"></span>
+      </label></td><td><label class="container">Irregular Sugar Level <input type="checkbox" name = "symptoms" value="Irregular Sugar Level"><span class="checkmark"></span>
+      </label></td><td><label class="container">Cough <input type="checkbox" name = "symptoms" value="Cough"><span class="checkmark"></span>
+      </label></td><td><label class="container">High Fever <input type="checkbox" name = "symptoms" value="High Fever"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Sunken Eyes <input type="checkbox" name = "symptoms" value="Sunken Eyes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Breathlessness <input type="checkbox" name = "symptoms" value="Breathlessness"><span class="checkmark"></span>
+      </label></td><td><label class="container">Sweating <input type="checkbox" name = "symptoms" value="Sweating"><span class="checkmark"></span>
+      </label></td><td><label class="container">Dehydration <input type="checkbox" name = "symptoms" value="Dehydration"><span class="checkmark"></span>
+      </label></td><td><label class="container">Indigestion <input type="checkbox" name = "symptoms" value="Indigestion"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Headache <input type="checkbox" name = "symptoms" value="Headache"><span class="checkmark"></span>
+      </label></td><td><label class="container">Yellowish Skin <input type="checkbox" name = "symptoms" value="Yellowish Skin"><span class="checkmark"></span>
+      </label></td><td><label class="container">Dark Urine <input type="checkbox" name = "symptoms" value="Dark Urine"><span class="checkmark"></span>
+      </label></td><td><label class="container">Nausea <input type="checkbox" name = "symptoms" value="Nausea"><span class="checkmark"></span>
+      </label></td><td><label class="container">Loss Of Appetite <input type="checkbox" name = "symptoms" value="Loss Of Appetite"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Pain Behind The Eyes <input type="checkbox" name = "symptoms" value="Pain Behind The Eyes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Back Pain <input type="checkbox" name = "symptoms" value="Back Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Constipation <input type="checkbox" name = "symptoms" value="Constipation"><span class="checkmark"></span>
+      </label></td><td><label class="container">Abdominal Pain <input type="checkbox" name = "symptoms" value="Abdominal Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Diarrhoea <input type="checkbox" name = "symptoms" value="Diarrhoea"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Mild Fever <input type="checkbox" name = "symptoms" value="Mild Fever"><span class="checkmark"></span>
+      </label></td><td><label class="container">Yellow Urine <input type="checkbox" name = "symptoms" value="Yellow Urine"><span class="checkmark"></span>
+      </label></td><td><label class="container">Yellowing Of Eyes <input type="checkbox" name = "symptoms" value="Yellowing Of Eyes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Acute Liver Failure <input type="checkbox" name = "symptoms" value="Acute Liver Failure"><span class="checkmark"></span>
+      </label></td><td><label class="container">Fluid Overload <input type="checkbox" name = "symptoms" value="Fluid Overload"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Swelling Of Stomach <input type="checkbox" name = "symptoms" value="Swelling Of Stomach"><span class="checkmark"></span>
+      </label></td><td><label class="container">Swelled Lymph Nodes <input type="checkbox" name = "symptoms" value="Swelled Lymph Nodes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Malaise <input type="checkbox" name = "symptoms" value="Malaise"><span class="checkmark"></span>
+      </label></td><td><label class="container">Blurred And Distorted Vision <input type="checkbox" name = "symptoms" value="Blurred And Distorted Vision"><span class="checkmark"></span>
+      </label></td><td><label class="container">Phlegm <input type="checkbox" name = "symptoms" value="Phlegm"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Throat Irritation <input type="checkbox" name = "symptoms" value="Throat Irritation"><span class="checkmark"></span>
+      </label></td><td><label class="container">Redness Of Eyes <input type="checkbox" name = "symptoms" value="Redness Of Eyes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Sinus Pressure <input type="checkbox" name = "symptoms" value="Sinus Pressure"><span class="checkmark"></span>
+      </label></td><td><label class="container">Runny Nose <input type="checkbox" name = "symptoms" value="Runny Nose"><span class="checkmark"></span>
+      </label></td><td><label class="container">Congestion <input type="checkbox" name = "symptoms" value="Congestion"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Chest Pain <input type="checkbox" name = "symptoms" value="Chest Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Weakness In Limbs <input type="checkbox" name = "symptoms" value="Weakness In Limbs"><span class="checkmark"></span>
+      </label></td><td><label class="container">Fast Heart Rate <input type="checkbox" name = "symptoms" value="Fast Heart Rate"><span class="checkmark"></span>
+      </label></td><td><label class="container">Pain During Bowel Movements <input type="checkbox" name = "symptoms" value="Pain During Bowel Movements"><span class="checkmark"></span>
+      </label></td><td><label class="container">Pain In Anal Region <input type="checkbox" name = "symptoms" value="Pain In Anal Region"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Bloody Stool <input type="checkbox" name = "symptoms" value="Bloody Stool"><span class="checkmark"></span>
+      </label></td><td><label class="container">Irritation In Anus <input type="checkbox" name = "symptoms" value="Irritation In Anus"><span class="checkmark"></span>
+      </label></td><td><label class="container">Neck Pain <input type="checkbox" name = "symptoms" value="Neck Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Dizziness <input type="checkbox" name = "symptoms" value="Dizziness"><span class="checkmark"></span>
+      </label></td><td><label class="container">Cramps <input type="checkbox" name = "symptoms" value="Cramps"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Bruising <input type="checkbox" name = "symptoms" value="Bruising"><span class="checkmark"></span>
+      </label></td><td><label class="container">Obesity <input type="checkbox" name = "symptoms" value="Obesity"><span class="checkmark"></span>
+      </label></td><td><label class="container">Swollen Legs <input type="checkbox" name = "symptoms" value="Swollen Legs"><span class="checkmark"></span>
+      </label></td><td><label class="container">Swollen Blood Vessels <input type="checkbox" name = "symptoms" value="Swollen Blood Vessels"><span class="checkmark"></span>
+      </label></td><td><label class="container">Puffy Face And Eyes <input type="checkbox" name = "symptoms" value="Puffy Face And Eyes"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Enlarged Thyroid <input type="checkbox" name = "symptoms" value="Enlarged Thyroid"><span class="checkmark"></span>
+      </label></td><td><label class="container">Brittle Nails <input type="checkbox" name = "symptoms" value="Brittle Nails"><span class="checkmark"></span>
+      </label></td><td><label class="container">Swollen Extremeties <input type="checkbox" name = "symptoms" value="Swollen Extremeties"><span class="checkmark"></span>
+      </label></td><td><label class="container">Excessive Hunger <input type="checkbox" name = "symptoms" value="Excessive Hunger"><span class="checkmark"></span>
+      </label></td><td><label class="container">Extra Marital Contacts <input type="checkbox" name = "symptoms" value="Extra Marital Contacts"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Drying And Tingling Lips <input type="checkbox" name = "symptoms" value="Drying And Tingling Lips"><span class="checkmark"></span>
+      </label></td><td><label class="container">Slurred Speech <input type="checkbox" name = "symptoms" value="Slurred Speech"><span class="checkmark"></span>
+      </label></td><td><label class="container">Knee Pain <input type="checkbox" name = "symptoms" value="Knee Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Hip Joint Pain <input type="checkbox" name = "symptoms" value="Hip Joint Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Muscle Weakness <input type="checkbox" name = "symptoms" value="Muscle Weakness"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Stiff Neck <input type="checkbox" name = "symptoms" value="Stiff Neck"><span class="checkmark"></span>
+      </label></td><td><label class="container">Swelling Joints <input type="checkbox" name = "symptoms" value="Swelling Joints"><span class="checkmark"></span>
+      </label></td><td><label class="container">Movement Stiffness <input type="checkbox" name = "symptoms" value="Movement Stiffness"><span class="checkmark"></span>
+      </label></td><td><label class="container">Spinning Movements <input type="checkbox" name = "symptoms" value="Spinning Movements"><span class="checkmark"></span>
+      </label></td><td><label class="container">Loss Of Balance <input type="checkbox" name = "symptoms" value="Loss Of Balance"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Unsteadiness <input type="checkbox" name = "symptoms" value="Unsteadiness"><span class="checkmark"></span>
+      </label></td><td><label class="container">Weakness Of One Body Side <input type="checkbox" name = "symptoms" value="Weakness Of One Body Side"><span class="checkmark"></span>
+      </label></td><td><label class="container">Loss Of Smell <input type="checkbox" name = "symptoms" value="Loss Of Smell"><span class="checkmark"></span>
+      </label></td><td><label class="container">Bladder Discomfort <input type="checkbox" name = "symptoms" value="Bladder Discomfort"><span class="checkmark"></span>
+      </label></td><td><label class="container">Foul Smell Of urine <input type="checkbox" name = "symptoms" value="Foul Smell Of urine"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Continuous Feel Of Urine <input type="checkbox" name = "symptoms" value="Continuous Feel Of Urine"><span class="checkmark"></span>
+      </label></td><td><label class="container">Passage Of Gases <input type="checkbox" name = "symptoms" value="Passage Of Gases"><span class="checkmark"></span>
+      </label></td><td><label class="container">Internal Itching <input type="checkbox" name = "symptoms" value="Internal Itching"><span class="checkmark"></span>
+      </label></td><td><label class="container">Toxic Look (typhos) <input type="checkbox" name = "symptoms" value="Toxic Look (typhos)"><span class="checkmark"></span>
+      </label></td><td><label class="container">Depression <input type="checkbox" name = "symptoms" value="Depression"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Irritability <input type="checkbox" name = "symptoms" value="Irritability"><span class="checkmark"></span>
+      </label></td><td><label class="container">Muscle Pain <input type="checkbox" name = "symptoms" value="Muscle Pain"><span class="checkmark"></span>
+      </label></td><td><label class="container">Altered Sensorium <input type="checkbox" name = "symptoms" value="Altered Sensorium"><span class="checkmark"></span>
+      </label></td><td><label class="container">Red Spots Over Body <input type="checkbox" name = "symptoms" value="Red Spots Over Body"><span class="checkmark"></span>
+      </label></td><td><label class="container">Belly Pain <input type="checkbox" name = "symptoms" value="Belly Pain"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Abnormal Menstruation <input type="checkbox" name = "symptoms" value="Abnormal Menstruation"><span class="checkmark"></span>
+      </label></td><td><label class="container">Dischromic  Patches <input type="checkbox" name = "symptoms" value="Dischromic  Patches"><span class="checkmark"></span>
+      </label></td><td><label class="container">Watering From Eyes <input type="checkbox" name = "symptoms" value="Watering From Eyes"><span class="checkmark"></span>
+      </label></td><td><label class="container">Increased Appetite <input type="checkbox" name = "symptoms" value="Increased Appetite"><span class="checkmark"></span>
+      </label></td><td><label class="container">Polyuria <input type="checkbox" name = "symptoms" value="Polyuria"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Family History <input type="checkbox" name = "symptoms" value="Family History"><span class="checkmark"></span>
+      </label></td><td><label class="container">Mucoid Sputum <input type="checkbox" name = "symptoms" value="Mucoid Sputum"><span class="checkmark"></span>
+      </label></td><td><label class="container">Rusty Sputum <input type="checkbox" name = "symptoms" value="Rusty Sputum"><span class="checkmark"></span>
+      </label></td><td><label class="container">Lack Of Concentration <input type="checkbox" name = "symptoms" value="Lack Of Concentration"><span class="checkmark"></span>
+      </label></td><td><label class="container">Visual Disturbances <input type="checkbox" name = "symptoms" value="Visual Disturbances"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Receiving Blood Transfusion <input type="checkbox" name = "symptoms" value="Receiving Blood Transfusion"><span class="checkmark"></span>
+      </label></td><td><label class="container">Receiving Unsterile Injections <input type="checkbox" name = "symptoms" value="Receiving Unsterile Injections"><span class="checkmark"></span>
+      </label></td><td><label class="container">Coma <input type="checkbox" name = "symptoms" value="Coma"><span class="checkmark"></span>
+      </label></td><td><label class="container">Stomach Bleeding <input type="checkbox" name = "symptoms" value="Stomach Bleeding"><span class="checkmark"></span>
+      </label></td><td><label class="container">Distention Of Abdomen <input type="checkbox" name = "symptoms" value="Distention Of Abdomen"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">History Of Alcohol Consumption <input type="checkbox" name = "symptoms" value="History Of Alcohol Consumption"><span class="checkmark"></span>
+      </label></td><td><label class="container">Fluid Overload.1 <input type="checkbox" name = "symptoms" value="Fluid Overload.1"><span class="checkmark"></span>
+      </label></td><td><label class="container">Blood In Sputum <input type="checkbox" name = "symptoms" value="Blood In Sputum"><span class="checkmark"></span>
+      </label></td><td><label class="container">Prominent Veins On Calf <input type="checkbox" name = "symptoms" value="Prominent Veins On Calf"><span class="checkmark"></span>
+      </label></td><td><label class="container">Palpitations <input type="checkbox" name = "symptoms" value="Palpitations"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Painful Walking <input type="checkbox" name = "symptoms" value="Painful Walking"><span class="checkmark"></span>
+      </label></td><td><label class="container">Pus Filled Pimples <input type="checkbox" name = "symptoms" value="Pus Filled Pimples"><span class="checkmark"></span>
+      </label></td><td><label class="container">Blackheads <input type="checkbox" name = "symptoms" value="Blackheads"><span class="checkmark"></span>
+      </label></td><td><label class="container">Scurring <input type="checkbox" name = "symptoms" value="Scurring"><span class="checkmark"></span>
+      </label></td><td><label class="container">Skin Peeling <input type="checkbox" name = "symptoms" value="Skin Peeling"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Silver Like Dusting <input type="checkbox" name = "symptoms" value="Silver Like Dusting"><span class="checkmark"></span>
+      </label></td><td><label class="container">Small Dents In Nails <input type="checkbox" name = "symptoms" value="Small Dents In Nails"><span class="checkmark"></span>
+      </label></td><td><label class="container">Inflammatory Nails <input type="checkbox" name = "symptoms" value="Inflammatory Nails"><span class="checkmark"></span>
+      </label></td><td><label class="container">Blister <input type="checkbox" name = "symptoms" value="Blister"><span class="checkmark"></span>
+      </label></td><td><label class="container">Red Sore Around Nose <input type="checkbox" name = "symptoms" value="Red Sore Around Nose"><span class="checkmark"></span>
+      </label></td></tr>
+          <tr><td><label class="container">Yellow Crust Ooze <input type="checkbox" name = "symptoms" value="Yellow Crust Ooze"><span class="checkmark"></span>
+      </label></td></tr>
+      
+  
+  <tr><td><label class="container" style="background-color:red ;bottom:90px " >
+    <!--<input type="submit" value="Submit"> Submit-->
+     <div class = "last">
+<input type="submit" value="Submit"> Submit
+  </div>
+</label>
+<br><br>
+</td>
+</tr>
+<!--<tr><td><label style="margin:90px">   </label></td></tr>-->
+</table>
+</form>
+</div>
+<br><br><br><br>
+
+</body>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #d4d6a8);
+}
+.container{
+    position: relative;
+    top:10pc;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #d4d6a8);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #d4d6a8;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #d4d6a8;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #d4d6a8);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #d4d6a8);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+}
+
+
+.org ul{
+    position: absolute;
+    float: right;
+    top: 20%;
+    right: 5%;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+.org ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+.org ul li a:hover{
+    background-color: black;
+    color: aqua;
+    transition: 0.6s ease;
+}
+
+.org ul li.active a{
+    background-color: black;
+    color: aqua;
+}
+
+.org .logo img{
+    float: left;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 200px;
+    height: auto;
+}
+
+
+ .title1{
+    font-size: 5pc;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.org{
+    left: 10%;
+    right: 10%;
+}
+  .Please{
+    position:relative;
+    top:10pc;
+  }
+  .last{
+    position:relative;
+    text-align:center;
+    color: white; 
+    /*background-color:red;*/
+}
+  .outer{
+    position:absolute;
+    top:10pc;
+    width:60%;
+    left:10pc;
+    bottom:10px;
+    padding-bottom:20px;
+  }
+    table{
+        top:20pc;
+      
+    }
+    td{
+        
+        padding:10px;
+        bottom: 10pc;
+    }
+
+    tr{
+       
+        padding:10pc;
+    }
+    .container {
+        display: block;
+      
+      padding-left: 2px;
+      margin-bottom: 3px;
+      cursor: pointer;
+      font-size: 15px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      
+      
+      .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      }
+      
+      
+      .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      }
+      
+      
+      .container:hover input ~ .checkmark {
+      background-color: #ccc;
+      }
+      
+      
+      .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+      }
+      
+      
+      .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      }
+      
+      
+      .container input:checked ~ .checkmark:after {
+      display: block;
+      }
+      
+      
+      .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      }
+      
+    </style>
+</html>

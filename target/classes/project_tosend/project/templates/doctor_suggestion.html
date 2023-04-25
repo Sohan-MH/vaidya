@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/doctor_reg.css">
+</head>
+<body>
+    <div class="org">
+        <div class="title1"><b>Project Vaidya</b></div>
+        <div class="logo">
+           <img src="static/logo.png" alt=""> 
+        </div>
+        <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/pt" style="pointer-events: none;">Patient</a></li>
+            <li><a href="/d_r">Doctor</a></li>
+            <li><a href="/diag" style="pointer-events: none;">Diagnosis</a></li>
+            <li><a href="cont">Contact</a></li>
+        </ul>
+    </div>
+
+  
+    
+    
+    
+    <table id="customers">
+      <tr>
+        <th>Symptoms</th>
+        <th>Doctor Suggestions</th>
+        <th>Disease Predicted by our model</th>
+      </tr>
+      {% for row in data%}
+      <tr>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        
+      </tr>
+    {%endfor%}
+    </table>
+    
+    </body>
+    </html>
+    
+    
+    
+</body>
+<style >
+  
+    #customers {
+        top:6pc;
+        position:relative;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      #customers tr:nth-child(even){background-color: #f2f2f2;}
+      
+      #customers tr:hover {background-color: #ddd;}
+      
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+      }
+ </style>
+</html>

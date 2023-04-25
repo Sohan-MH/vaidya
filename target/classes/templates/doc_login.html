@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/pat_login.css">
+</head>
+<body>
+<div class="org">
+    <div class="title1" ><b>Project Vaidya</b></div>
+    <div class="logo">
+        <img src="logo.png" alt="">
+    </div>
+    <div text-align ="center">
+        <ul >
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/registration}">Patient</a></li>
+            <li  class="active"><a href="/d_r">Doctor</a></li>
+            <li><a href="/registration">Diagnosis</a></li>
+            <li><a href="/cont">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" onclick="onclick">
+
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="center">
+        <h2>Doctor Sign In</h2>
+        <form id="login" th:action="@{/doctorlogin}" th:object="${doctor}" method="POST">
+
+            <input type="text"   th:field = "*{UserName}" placeholder="Username"  />
+            <input type="password"  th:field = "*{Doc_Password}" placeholder="Password" />
+            <h2>&nbsp;</h2>
+
+            <input type="submit" class = "log" name="log" id="log" value="Log In Here" >
+        </form>
+        <br>
+
+        <div>Not a Member? <a href = "/doc_reg">Signup</a></div>
+    </div>
+</div>
+</div>
+
+<!-- <div class="login">
+<form id="login" method="POST" action="/dl_s">
+    <center><h2> Doctor Login</h2></center><br>
+    <div>{{msg}}</div>
+    <label><b>User Name
+    </b>
+    </label>
+    <input type="text" name="Uname" id="Uname" placeholder="Username">
+    <br><br>
+    <label><b>Password
+    </b>
+    </label>
+    <input type="Password" name="Pass" id="Pass" placeholder="Password">
+    <br><br>
+    <input type="submit" name="log" id="log" value="Log In Here">
+    <br><br>
+</form>
+<div>Not a Member? <a href = "/doc_reg">Signup</a></div>
+</div>  -->
+</body>
+
+
+<style>
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #d4d6a8);
+  }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+
+}
+
+
+.org ul{
+    position: absolute;
+    float: right;
+    top: 20%;
+    right: 5%;
+    list-style-type: none;
+    margin-top: 25px;
+    text-align:center;
+}
+
+.org ul li{
+    display: inline-block;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+.org ul li a:hover{
+    background-color: black;
+    color: aqua;
+    transition: 0.6s ease;
+}
+
+.org ul li.active a{
+    background-color: black;
+    color: aqua;
+}
+
+.org .logo img{
+    float: left;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 200px;
+    height: auto;
+}
+
+
+ .title1{
+    font-size: 5pc;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+.org{
+    left: 10%;
+    right: 10%;
+    text-align: center;
+}
+.login{
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 60px;
+    background: #FFFFFF;
+    border-radius: 15px ;
+
+}
+h2{
+text-align: center;
+color: #71b7e6;
+padding: 20px;
+}
+label{
+color: #71b7e6;
+font-size: 17px;
+}
+#UserName{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 3px;
+padding-left: 8px;
+}
+#Doc_Password{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 3px;
+padding-left: 8px;
+
+}
+#log{
+width: 300px;
+height: 30px;
+border: none;
+border-radius: 17px;
+padding-left: 7px;
+color: #71b7e6;
+
+
+}
+span{
+color: white;
+font-size: 17px;
+}
+a{
+float: right;
+background-color: grey;
+}
+
+/* body
+{
+    margin: 0;
+    padding: 0;
+    background-color:#6abadeba;
+    font-family: 'Arial';
+}   */
+.login{
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+        margin: 20 0 0 450px;
+        padding: 60px;
+        background: white;
+        border-radius: 15px ;
+        top: 4pc;
+        position: relative;
+}
+h2{
+    text-align: center;
+    color: black;
+    padding: 20px;
+}
+label{
+    color: black;
+    font-size: 17px;
+}
+#UserName{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#Doc_Password{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+
+}
+#log{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    color: black;
+
+
+}
+span{
+    color: white;
+    font-size: 17px;
+}
+a{
+    float: right;
+    background-color: grey;
+}
+    @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .container {
+      position: relative;
+      top:7pc;
+      width: 50%;
+      height: 50%;
+      overflow: hidden;
+    }
+    .container:hover .top:before, .container:hover .top:after, .container:hover .bottom:before, .container:hover .bottom:after, .container:active .top:before, .container:active .top:after, .container:active .bottom:before, .container:active .bottom:after {
+      margin-left: 200px;
+      transform-origin: -200px 50%;
+      transition-delay: 0s;
+    }
+    .container:hover .center, .container:active .center {
+      opacity: 1;
+      transition-delay: 0.2s;
+    }
+
+    .top:before, .top:after, .bottom:before, .bottom:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200vmax;
+      height: 200vmax;
+      top: 50%;
+      left: 50%;
+      margin-top: -100vmax;
+      transform-origin: 0 50%;
+      transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+      z-index: 10;
+      opacity: 0.65;
+      transition-delay: 0.2s;
+    }
+
+    .top:before {
+      transform: rotate(45deg);
+      background: #e46569;
+    }
+    .top:after {
+      transform: rotate(135deg);
+      background: #ecaf81;
+    }
+
+    .bottom:before {
+      transform: rotate(-45deg);
+      background: #60b8d4;
+    }
+    .bottom:after {
+      transform: rotate(-135deg);
+      background: #3745b5;
+    }
+
+    .center {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      top: 50%;
+      left: 50%;
+      margin-left: -200px;
+      margin-top: -200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+      transition-delay: 0s;
+      color: black;
+    }
+    .center input {
+      width: 100%;
+      padding: 15px;
+      margin: 5px;
+      border-radius: 1px;
+      border: 1px solid ;
+      font-family: inherit;
+    }
+    .log {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+      }
+
+      .log:hover {
+        background-color: #008CBA;
+        color: white;
+      }
+      .log {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+</style>
+
+
+</html>

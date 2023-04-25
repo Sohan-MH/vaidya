@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <div class="org">
+        <div class="title1" ><b>Project Vaidya</b></div>
+        <div class="logo">
+           <img src="static/logo.png" alt=""> 
+        </div>
+        <div text-align ="center";>
+        <ul >
+            <li><a href="/">Home</a></li>
+            <li><a href="/pt" style="pointer-events: none;">Patient</a></li>
+            <li><a href="/d_r">Doctor</a></li>
+            <li><a href="/diag" class="active" style="pointer-events: none;">Diagnosis</a></li>
+            <li><a href="/cont">Contact</a></li>
+        </ul>
+    </div>
+
+    </div>
+    <div class = "logout">
+        <h1>Welcome &nbsp; {{username}} &nbsp;
+        <a href = "{{url_for('logout')}}    ">Logout</a></h1>
+    </div>
+<br><br>
+    <div class="msg1">
+        <h1>{{msg}}</h1>
+    </div>
+<br><br>
+<div class="my-51" >
+<table id="customers">
+    <tr>
+        <th>USERNAME</th>
+      <th>SYMPTOMS</th>
+      <th>PREDICTIONS</th>
+      <th>SUGGESTIONS</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+    <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[2]}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    
+        
+    <div class="my-5" >
+        <div class="form-style-5">
+            <form action="/send_sug" method="POST">
+            <fieldset>
+            <legend><span class="number">1</span> Patient Info</legend>
+            <input type="text" name="Uname" placeholder="Username of Patient">
+            
+            
+            <fieldset>
+            <legend><span class="number">2</span>Your Suggestion</legend>
+            <textarea name="suggestions" placeholder="Your suggestion"></textarea>
+            </fieldset>
+            <input type="submit" value="Submit" />
+        </fieldset>
+            </form>
+        </div>
+        </div>
+  
+</body>
+<STYLE>
+    .my-51{
+        position:relative;
+        top:5pc;
+        bottom:10pc;
+        right:12pc;
+    }
+    .my-5{
+       position:relative;
+        bottom:10pc;
+        top:5pc;
+        right:10pc;
+    }
+    .msg1{
+        position:absolute;
+        
+        top:38pc;
+        left:5pc;
+    }
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  .logout{
+        position:relative;
+        bottom:43%;
+        left:70%;
+      }
+      
+        .form-style-5{
+            max-width: 1000px;
+            padding: 50px 50px;
+            background: #f4f7f8;
+            margin: 10px auto;
+            padding: 25px;
+            background: #f4f7f8;
+            border-radius: 8px;
+            width:500px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+        .form-style-5 fieldset{
+            border: none;
+        }
+        .form-style-5 legend {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .form-style-5 label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .form-style-5 input[type="text"],
+        .form-style-5 input[type="date"],
+        .form-style-5 input[type="datetime"],
+        .form-style-5 input[type="email"],
+        .form-style-5 input[type="number"],
+        .form-style-5 input[type="search"],
+        .form-style-5 input[type="time"],
+        .form-style-5 input[type="url"],
+        .form-style-5 textarea,
+        .form-style-5 select {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            background: rgba(255,255,255,.1);
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            margin: 0;
+            outline: 0;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box; 
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box; 
+            background-color: #e8eeef;
+            color:#8a97a0;
+            -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+            margin-bottom: 30px;
+        }
+        .form-style-5 input[type="text"]:focus,
+        .form-style-5 input[type="date"]:focus,
+        .form-style-5 input[type="datetime"]:focus,
+        .form-style-5 input[type="email"]:focus,
+        .form-style-5 input[type="number"]:focus,
+        .form-style-5 input[type="search"]:focus,
+        .form-style-5 input[type="time"]:focus,
+        .form-style-5 input[type="url"]:focus,
+        .form-style-5 textarea:focus,
+        .form-style-5 select:focus{
+            background: #d2d9dd;
+        }
+        .form-style-5 select{
+            -webkit-appearance: menulist-button;
+            height:35px;
+        }
+        .form-style-5 .number {
+            background: #1abc9c;
+            color: #fff;
+            height: 30px;
+            width: 40px;
+            display: inline-block;
+            font-size: 0.8em;
+            margin-right: 4px;
+            line-height: 30px;
+            text-align: center;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+            border-radius: 15px 15px 15px 0px;
+        }
+        
+        .form-style-5 input[type="submit"],
+        .form-style-5 input[type="button"]
+        {
+            position: relative;
+            display: block;
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            margin: 0 auto;
+            background: #1abc9c;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            width: 100%;
+            border: 1px solid #16a085;
+            border-width: 1px 1px 3px;
+            margin-bottom: 10px;
+        }
+        .form-style-5 input[type="submit"]:hover,
+        .form-style-5 input[type="button"]:hover
+        {
+            background: #109177;
+        }
+        
+  </style>
+</html>

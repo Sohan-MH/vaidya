@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidya</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+<div class="org">
+    <div class="title1" ><b>Project Vaidya</b></div>
+    <div class="logo">
+        <img src="static/logo.png" alt="">
+    </div>
+    <div text-align ="center";>
+        <ul>
+            <li ><a href="/">Home</a></li>
+            <li><a th:href="@{/registration}">Patient</a></li>
+            <li ><a th:href="@{/doc_reg}">Doctor</a></li>
+            <li class="active"><a href="/predict">Diagnosis</a></li>
+            <li><a href="/cont">Contact</a></li>
+        </ul>
+    </div>
+
+</div>
+<center th:text="${username1}"></center>
+<div container="my-5">
+    <table>
+        <tr>
+            <th>
+                <div>
+                    <form action = "/predict" >
+                        <input type="submit" value="Diagnosis" class="button-9">
+                        <br><br>
+                    </form></div>
+            </th>
+        </tr>
+        <tr>
+            <td><div>
+
+                <form th:action="@{/chat(username1=${username1})}"  >
+                    <input type="submit" value="Chat with Doctors" class="button-9"><br><br>
+                </form></div>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+<style>
+     .button-9 {
+
+
+
+       top: 6pc;
+       left:-10pc;
+        appearance: button;
+        backface-visibility: hidden;
+        background-color: #405cf5;
+        border-radius: 6px;
+        border-width: 0;
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+        font-size: xx-large;
+        height: 70px;
+        line-height: 1.15;
+        margin: 12px 0 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transform: translateZ(0);
+        transition: all .2s,box-shadow .08s ease-in;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-9:disabled {
+        cursor: default;
+      }
+
+      .button-9:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+      }
+      .logout{
+        position:relative;
+        bottom:43%;
+        left:45%;
+      }
+</style>
+</html>
